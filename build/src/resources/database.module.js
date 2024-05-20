@@ -6,22 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.DatabaseModule = void 0;
 const common_1 = require("@nestjs/common");
-const automovil_module_1 = require("./core/automovil.module");
-const database_module_1 = require("./resources/database.module");
-const marca_module_1 = require("./core/marca.module");
-const eureka_module_1 = require("./eureka.module");
-let AppModule = class AppModule {
+const typeorm_1 = require("@nestjs/typeorm");
+let DatabaseModule = class DatabaseModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.DatabaseModule = DatabaseModule;
+exports.DatabaseModule = DatabaseModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            database_module_1.DatabaseModule,
-            automovil_module_1.AutomovilModule,
-            marca_module_1.MarcaModule,
-            eureka_module_1.EurekaModule,
+            typeorm_1.TypeOrmModule.forRoot({
+                type: "mysql",
+                host: "localhost",
+                port: 3306,
+                username: "root",
+                password: "9122003",
+                database: "nodeprueba",
+                synchronize: true,
+                logging: false,
+                entities: ["src/core/entity/**/*.ts"],
+                migrations: ["src/migration/**/*.ts"],
+                subscribers: ["src/subscriber/**/*.ts"],
+            }),
         ],
     })
-], AppModule);
+], DatabaseModule);

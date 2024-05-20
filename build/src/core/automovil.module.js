@@ -6,22 +6,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.AutomovilModule = void 0;
 const common_1 = require("@nestjs/common");
-const automovil_module_1 = require("./core/automovil.module");
-const database_module_1 = require("./resources/database.module");
-const marca_module_1 = require("./core/marca.module");
-const eureka_module_1 = require("./eureka.module");
-let AppModule = class AppModule {
+const AutomovilController_1 = require("../adapter/input/AutomovilController");
+const automovil_service_1 = require("./services/automovil.service");
+const repository_1 = require("../adapter/output/repository");
+const typeorm_1 = require("@nestjs/typeorm");
+const Automovil_1 = require("./entity/Automovil");
+const marca_module_1 = require("./marca.module");
+let AutomovilModule = class AutomovilModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.AutomovilModule = AutomovilModule;
+exports.AutomovilModule = AutomovilModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            database_module_1.DatabaseModule,
-            automovil_module_1.AutomovilModule,
+            typeorm_1.TypeOrmModule.forFeature([Automovil_1.Automovil]),
             marca_module_1.MarcaModule,
-            eureka_module_1.EurekaModule,
         ],
+        controllers: [AutomovilController_1.AutomovilController],
+        providers: [automovil_service_1.AutomovilService, repository_1.AutomovilRepository],
     })
-], AppModule);
+], AutomovilModule);
