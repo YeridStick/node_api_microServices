@@ -1,14 +1,6 @@
-import {
-  Controller,
-  Get,
-  Put,
-  Post,
-  Delete,
-  Param,
-  Body,
-} from "@nestjs/common";
+import { Controller, Get, Put, Post, Delete, Param, Body } from "@nestjs/common";
 import { MarcaServices } from "../../core/services/marca.service";
-import { Marca } from "../../core/entity/Marca";
+import { Marca } from "../../core/model/Marca";
 
 @Controller("marca")
 export class MarcaController {

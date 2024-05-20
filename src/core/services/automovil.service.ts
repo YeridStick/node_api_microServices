@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
 import { AutomovilRepository } from "../../adapter/output/repository";
-import { Automovil } from "../entity/Automovil";
+import { Automovil } from "../model/Automovil";
 import { MarcaRepository } from "../../adapter/output/marcaRepository";
 
 import { AutomovilDto } from "../DTO/AutoDTO";
-import { Marca } from "../entity/Marca";
+import { Marca } from "../model/Marca";
 
 @Injectable()
 export class AutomovilService {

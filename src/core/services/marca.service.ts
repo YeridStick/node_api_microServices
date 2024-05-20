@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { MarcaRepository } from '../../adapter/output/marcaRepository';
-import { Marca } from '../entity/Marca';
+import { Marca } from '../model/Marca';
 
 @Injectable()
 export class MarcaServices {

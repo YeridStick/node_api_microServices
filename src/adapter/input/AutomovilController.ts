@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { AutomovilService } from '../../core/services/automovil.service';
-import { Automovil } from '../../core/entity/Automovil';
+import { Automovil } from '../../core/model/Automovil';
 import { AutomovilDto } from '../../core/DTO/AutoDTO';
 
 @Controller('automoviles')

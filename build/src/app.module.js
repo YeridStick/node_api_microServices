@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const automovil_module_1 = require("./core/automovil.module");
 const database_module_1 = require("./resources/database.module");
 const marca_module_1 = require("./core/marca.module");
+const eureka_module_1 = require("./eureka.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -20,6 +21,7 @@ exports.AppModule = AppModule = __decorate([
             database_module_1.DatabaseModule,
             automovil_module_1.AutomovilModule,
             marca_module_1.MarcaModule,
+            eureka_module_1.EurekaModule,
         ],
     })
 ], AppModule);

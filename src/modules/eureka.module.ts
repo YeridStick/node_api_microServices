@@ -1,6 +1,8 @@
 import { Module, OnModuleInit, Inject } from '@nestjs/common';
 import { Eureka } from 'eureka-js-client';
 
+const eurekaPort = process.env.EUREKAPORT ? parseInt(process.env.EUREKAPORT, 10) : 8761; // Mover la definición fuera
+
 @Module({
   providers: [
     {
@@ -24,7 +26,7 @@ import { Eureka } from 'eureka-js-client';
           },
           eureka: {
             host: 'localhost',
-            port: 8761,
+            port: eurekaPort,
             servicePath: '/eureka/apps/',
           },
         });
@@ -41,7 +43,7 @@ export class EurekaModule implements OnModuleInit {
       if (error) {
         console.error('Error starting Eureka client:', error);
       } else {
-        console.log('Eureka client started successfully');
+        console.log(`Eureka client started successfully. Access Eureka dashboard at http://localhost:${eurekaPort}`);
       }
     });
   }

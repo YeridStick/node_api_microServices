@@ -3,7 +3,7 @@ import { AutomovilController } from '../adapter/input/AutomovilController';
 import { AutomovilService } from './services/automovil.service';
 import { AutomovilRepository } from '../adapter/output/repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Automovil } from './entity/Automovil';
+import { Automovil } from './model/Automovil';
 import { MarcaModule } from './marca.module';
 
 @Module({

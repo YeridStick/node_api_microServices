@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Automovil } from '../../core/entity/Automovil';
+import { Automovil } from '../../core/model/Automovil';
 
 @Injectable()
 export class AutomovilRepository {
