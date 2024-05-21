@@ -34,7 +34,9 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@nestjs/axios": "^3.0.2",
     "@nestjs/typeorm": "^10.0.2",
+    "axios": "^1.7.1",
     "express": "^4.19.2",
     "mysql2": "^3.9.7",
     "reflect-metadata": "^0.2.2",

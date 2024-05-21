@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AutomovilModule } from '../core/automovil.module';
 import { DatabaseModule } from './database.module';
+import { AutomovilModule } from '../core/automovil.module';
 import { MarcaModule } from '../core/marca.module';
-import { EurekaModule } from './eureka.module';
+import { ClientModule } from '../core/client.module';
 
 @Module({
   imports: [
     DatabaseModule,
     AutomovilModule,
     MarcaModule,
-    EurekaModule,
-  ],
+    ClientModule
+  ]
 })
 export class AppModule {}

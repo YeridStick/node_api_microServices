@@ -13,7 +13,7 @@ const eurekaPort = process.env.EUREKAPORT ? parseInt(process.env.EUREKAPORT, 10)
           instance: {
             app: 'node-ts-app', // Cambia a tu nombre de aplicación
             hostName: process.env.HOSTNAME || 'localhost',
-            ipAddr: '127.0.0.1',
+            ipAddr: '0.0.0.0', // Escucha en todas las interfaces de red
             port: {
               $: port, // Usa el valor convertido
               '@enabled': true,

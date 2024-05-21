@@ -12,7 +12,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: "nodeprueba",
       synchronize: true,
       logging: false,
-      entities: ["src/core/entity/**/*.ts"],
+      entities: ["src/core/model/**/*.ts"],
       migrations: ["src/migration/**/*.ts"],
       subscribers: ["src/subscriber/**/*.ts"],
     }),
