@@ -16,7 +16,6 @@ export class MarcaController {
     return this.marcaServices.findOne(id);
   }
 
-  // En MarcaController
   @Post(":nombre")
   create(@Param("nombre") nombre: string): Promise<Marca> {
     return this.marcaServices.create(nombre);

@@ -10,17 +10,15 @@ export class MarcaRepository {
     private marcaRepository: Repository<Marca>
   ) {}
 
-  // En MarcaRepository
-async crearMarca(marca: Marca): Promise<Marca> {
+  async crearMarca(marca: Marca): Promise<Marca> {
     try {
       const savedMarca = await this.marcaRepository.save(marca);
       return savedMarca;
     } catch (error) {
-      console.error('Error al guardar la marca:', error);
+      console.error("Error al guardar la marca:", error);
       throw error;
     }
   }
-  
 
   async editarMarca(id: string, marca: Partial<Marca>): Promise<void> {
     await this.marcaRepository.update(id, marca);

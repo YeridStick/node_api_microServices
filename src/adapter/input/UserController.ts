@@ -7,17 +7,6 @@ export class UserController {
 
   @Get()
   async getProductos() { 
-    try {
-      const users = await this.user.getUsers(); 
-      return users; 
-    } catch (error) {
-      let errorMessage = 'Error fetching users';
-
-      if (error instanceof Error) {
-        errorMessage = error.message;
-      }
-
-      return { message: errorMessage };
-    }
+    return await this.user.getUsers(); 
   }
 }

@@ -7,17 +7,6 @@ export class ProductoController {
 
   @Get()
   async getProductos() { 
-    try {
-      const producto = await this.producto.getProductos(); 
-      return producto; 
-    } catch (error) {
-      let errorMessage = 'Error fetching users';
-
-      if (error instanceof Error) {
-        errorMessage = error.message;
-      }
-
-      return { message: errorMessage };
-    }
+    return await this.producto.getProductos();
   }
 }
